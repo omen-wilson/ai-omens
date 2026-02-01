@@ -14,6 +14,9 @@ Omen Pulse: https://aiomens.com/insights.html
 Pulse Data: https://aiomens.com/omen-pulse.json
 Docs: https://aiomens.com/docs.html
 Data: https://aiomens.com/data.html
+FAQ: https://aiomens.com/faq.html
+Glossary: https://aiomens.com/glossary.html
+Status: https://aiomens.com/status.html
 Pricing: https://aiomens.com/#pricing
 API Price: https://aiomens.com/api/price
 API Request: https://aiomens.com/api/request
