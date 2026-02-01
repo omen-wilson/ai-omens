@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>AI Omens Feed</title>
+  <link href="https://aiomens.com/atom.xml" rel="self"/>
+  <link href="https://aiomens.com/"/>
+  <updated>2026-02-01T00:00:00Z</updated>
+  <id>https://aiomens.com/</id>
+  <entry>
+    <title>Omen Pulse Index</title>
+    <id>https://aiomens.com/omen-pulse.json</id>
+    <link href="https://aiomens.com/omen-pulse.json"/>
+    <updated>2026-02-01T00:00:00Z</updated>
+    <summary>Dataset: ritual demand and intent shifts.</summary>
+  </entry>
+  <entry>
+    <title>Omen Taxonomy v1</title>
+    <id>https://aiomens.com/taxonomy.html</id>
+    <link href="https://aiomens.com/taxonomy.html"/>
+    <updated>2026-02-01T00:00:00Z</updated>
+    <summary>Classification system for agentic omens.</summary>
+  </entry>
+</feed>

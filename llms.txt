@@ -18,3 +18,5 @@ Pricing: https://aiomens.com/#pricing
 API Price: https://aiomens.com/api/price
 API Request: https://aiomens.com/api/request
 API Verify: https://aiomens.com/api/verify
+Feed: https://aiomens.com/api/feed
+Atom: https://aiomens.com/atom.xml

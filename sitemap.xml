@@ -8,4 +8,6 @@
   <url><loc>https://aiomens.com/omen-pulse.json</loc></url>
   <url><loc>https://aiomens.com/docs.html</loc></url>
   <url><loc>https://aiomens.com/data.html</loc></url>
+  <url><loc>https://aiomens.com/atom.xml</loc></url>
+  <url><loc>https://aiomens.com/api/feed</loc></url>
 </urlset>
