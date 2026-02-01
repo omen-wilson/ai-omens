@@ -1,0 +1,25 @@
+{
+  "agents": [
+    {"name":"Jarvis","status":"ok"},
+    {"name":"Writer","status":"ok"},
+    {"name":"Growth","status":"ok"},
+    {"name":"Analyst","status":"ok"},
+    {"name":"Reviewer","status":"warn"},
+    {"name":"Builder","status":"ok"}
+  ],
+  "tasks": [
+    {"title":"Landing page v2","status":"ok"},
+    {"title":"Launch plan","status":"ok"},
+    {"title":"KPI metrics","status":"ok"},
+    {"title":"Compliance review","status":"warn"}
+  ],
+  "decisions": [
+    {"title":"Entertainment-only positioning","date":"2026-01-31"},
+    {"title":"Crypto checkout for MVP","date":"2026-01-31"}
+  ],
+  "feed": [
+    {"text":"Writer delivered landing v2 + FAQ + pricing","time":"just now"},
+    {"text":"Growth delivered 2-week launch plan","time":"just now"},
+    {"text":"Analyst delivered KPI + event schema","time":"just now"}
+  ]
+}
