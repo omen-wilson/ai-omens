@@ -61,8 +61,10 @@
 
           <div class="paybox">
             <div>
-              <div class="form-note">Send USDC on Base to <code>0x5995...530F</code>.</div>
+              <div class="form-note">Send USDC on Base to:</div>
+              <div class="paylink"><strong>0x599533E0211feF7995BC939e57c486E56BED530F</strong></div>
               <div class="paylink" id="payUri"></div>
+              <button type="button" class="cta secondary" id="copyAddr" style="margin-top:10px;">Copy address</button>
             </div>
             <div class="qr" id="qrBox">QR loads…</div>
           </div>
@@ -113,6 +115,8 @@
     const tierEl = document.getElementById('tier');
     const payUriEl = document.getElementById('payUri');
     const qrBox = document.getElementById('qrBox');
+    const copyBtn = document.getElementById('copyAddr');
+    const receiver = '0x599533E0211feF7995BC939e57c486E56BED530F';
 
     async function refreshPay() {
       const tier = tierEl.value;
@@ -125,6 +129,16 @@
 
     tierEl.addEventListener('change', refreshPay);
     refreshPay();
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(receiver);
+        copyBtn.textContent = 'Copied';
+        setTimeout(() => (copyBtn.textContent = 'Copy address'), 1500);
+      } catch (e) {
+        copyBtn.textContent = receiver;
+      }
+    });
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
