@@ -7,6 +7,9 @@ Canonical: https://aiomens.com/
 
 # Key resources
 Homepage: https://aiomens.com/
+About: https://aiomens.com/about.html
+Manifesto: https://aiomens.com/manifesto.html
+Taxonomy: https://aiomens.com/taxonomy.html
 Pricing: https://aiomens.com/#pricing
 API Price: https://aiomens.com/api/price
 API Verify: https://aiomens.com/api/verify
