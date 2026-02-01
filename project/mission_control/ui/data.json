@@ -4,18 +4,19 @@
     {"name":"Trinity","role":"Copy & prompts","status":"ok"},
     {"name":"Niobe","role":"Launch & distribution","status":"ok"},
     {"name":"Oracle","role":"KPIs & metrics","status":"ok"},
-    {"name":"Cipher","role":"Compliance & QC","status":"warn"},
+    {"name":"Switch","role":"Compliance & QC","status":"ok"},
     {"name":"Tank","role":"Implementation","status":"ok"}
   ],
   "tasks": [
     {"title":"Landing page v2","status":"assigned","owner":"Trinity","tags":["copy"],"age":"1h"},
     {"title":"Launch plan","status":"in_progress","owner":"Niobe","tags":["launch"],"age":"45m"},
     {"title":"KPI metrics","status":"review","owner":"Oracle","tags":["analytics"],"age":"30m"},
-    {"title":"Compliance review","status":"review","owner":"Cipher","tags":["risk"],"age":"15m"},
+    {"title":"Compliance review","status":"review","owner":"Switch","tags":["risk"],"age":"5m"},
     {"title":"AgentMail integration","status":"inbox","owner":"Tank","tags":["infra"],"age":"2h"},
     {"title":"Dashboard UI","status":"done","owner":"Morpheus","tags":["ui"],"age":"just now"}
   ],
   "feed": [
+    {"text":"QC handoff: Cipher exited, Switch onboarded","time":"just now"},
     {"text":"Writer delivered landing v2 + FAQ + pricing","time":"just now"},
     {"text":"Growth delivered 2-week launch plan","time":"just now"},
     {"text":"Analyst delivered KPI + event schema","time":"just now"}
