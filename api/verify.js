@@ -3,6 +3,9 @@ const RECEIVER = "0x599533E0211feF7995BC939e57c486E56BED530F".toLowerCase();
 const TRANSFER_TOPIC = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef";
 const RPC = "https://mainnet.base.org";
 
+const cache = globalThis.__omenCache || new Map();
+if (!globalThis.__omenCache) globalThis.__omenCache = cache;
+
 function toBigInt(hex) { return BigInt(hex); }
 function parseAmount(dataHex) { return toBigInt(dataHex); }
 function normalizeHexAddress(topic) { return "0x" + topic.slice(26).toLowerCase(); }
@@ -57,11 +60,37 @@ function generateReading({ reading, intent, prompt }) {
   };
 }
 
+async function postWithRetry(url, payload, attempts = 3) {
+  let lastErr;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      const r = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (r.ok) return true;
+      lastErr = new Error(`Webhook failed with ${r.status}`);
+    } catch (e) {
+      lastErr = e;
+    }
+    await new Promise(res => setTimeout(res, 400 * (i + 1)));
+  }
+  throw lastErr;
+}
+
 export default async function handler(req, res) {
   try {
     if (req.method !== "POST") { res.status(405).json({ error: "POST only" }); return; }
     const { txHash, expectedAmount, callback_url, reading, intent, prompt } = req.body || {};
     if (!txHash || !expectedAmount) { res.status(400).json({ error: "txHash and expectedAmount required" }); return; }
+
+    // Idempotency (best-effort in-memory)
+    if (cache.has(txHash)) {
+      const cached = cache.get(txHash);
+      res.status(200).json({ verified: true, ...cached, cached: true });
+      return;
+    }
 
     const receipt = await rpc("eth_getTransactionReceipt", [txHash]);
     if (!receipt || !receipt.logs) { res.status(404).json({ error: "Transaction not found" }); return; }
@@ -81,16 +110,13 @@ export default async function handler(req, res) {
     if (!paid) { res.status(402).json({ verified: false, error: "Payment not verified" }); return; }
 
     const readingObj = generateReading({ reading, intent, prompt });
+    cache.set(txHash, readingObj);
 
     if (callback_url) {
       try {
-        await fetch(callback_url, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ status: "paid", ...readingObj })
-        });
+        await postWithRetry(callback_url, { status: "paid", ...readingObj }, 3);
       } catch (e) {
-        // ignore callback failures
+        // leave cached; caller can retry
       }
     }
 
