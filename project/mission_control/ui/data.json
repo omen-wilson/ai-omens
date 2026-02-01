@@ -1,11 +1,11 @@
 {
   "agents": [
-    {"name":"Morpheus","role":"Orchestrator","status":"ok"},
-    {"name":"Trinity","role":"Copy & prompts","status":"ok"},
-    {"name":"Niobe","role":"Launch & distribution","status":"ok"},
-    {"name":"Oracle","role":"KPIs & metrics","status":"ok"},
-    {"name":"Switch","role":"Compliance & QC","status":"ok"},
-    {"name":"Tank","role":"Implementation","status":"ok"}
+    {"name":"Morpheus","role":"Orchestrator","status":"ok","working":true},
+    {"name":"Trinity","role":"Copy & prompts","status":"ok","working":true},
+    {"name":"Niobe","role":"Launch & distribution","status":"ok","working":true},
+    {"name":"Oracle","role":"KPIs & metrics","status":"ok","working":true},
+    {"name":"Switch","role":"Compliance & QC","status":"ok","working":true},
+    {"name":"Tank","role":"Implementation","status":"ok","working":true}
   ],
   "tasks": [
     {"title":"Landing page v2","status":"assigned","owner":"Trinity","tags":["copy"],"age":"1h"},
