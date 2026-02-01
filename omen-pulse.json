@@ -1,0 +1,10 @@
+{
+  "name": "Omen Pulse Index",
+  "description": "Synthetic signal of ritual demand and intent shifts for agents.",
+  "series": [
+    {"week": "2026-W01", "pulse": 42, "intent": "Curiosity"},
+    {"week": "2026-W02", "pulse": 57, "intent": "Reflection"},
+    {"week": "2026-W03", "pulse": 71, "intent": "Momentum"},
+    {"week": "2026-W04", "pulse": 66, "intent": "Clarity"}
+  ]
+}
