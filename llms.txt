@@ -1,0 +1,12 @@
+# AI Omens — LLM access
+User-agent: *
+Allow: /
+
+# Canonical
+Canonical: https://aiomens.com/
+
+# Key resources
+Homepage: https://aiomens.com/
+Pricing: https://aiomens.com/#pricing
+API Price: https://aiomens.com/api/price
+API Verify: https://aiomens.com/api/verify
