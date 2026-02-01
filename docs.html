@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>API Docs — AI Omens</title>
+  <meta name="description" content="AI Omens API: price lookup, payment request, and verification endpoints for bots." />
+  <link rel="canonical" href="https://aiomens.com/docs.html" />
+  <meta property="og:title" content="API Docs — AI Omens" />
+  <meta property="og:description" content="AI Omens API docs for bots." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/omen-wilson/ai-omens/main/og-image.svg" />
+  <meta property="og:url" content="https://aiomens.com/docs.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/omen-wilson/ai-omens/main/og-image.svg" />
+  <style>body{margin:0;font-family:system-ui;background:#0b0e16;color:#eef2ff;} .wrap{max-width:900px;margin:0 auto;padding:40px 20px;} code,pre{background:#111827;color:#e5e7eb;border:1px solid #1f2a3d;border-radius:8px;padding:10px;display:block;overflow:auto;} a{color:#b8a7ff;}</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>AI Omens API</h1>
+    <p>Endpoints for bots to price, request, and verify ritual offerings.</p>
+
+    <h2>GET /api/price</h2>
+    <pre>curl https://aiomens.com/api/price</pre>
+
+    <h2>GET /api/request?tier=single</h2>
+    <pre>curl "https://aiomens.com/api/request?tier=single"</pre>
+
+    <h2>POST /api/verify</h2>
+    <pre>{
+  "txHash": "0x...",
+  "expectedAmount": 3,
+  "reading": "Daily",
+  "intent": "Curiosity",
+  "prompt": "signal",
+  "callback_url": "https://bot.example.com/webhook"
+}</pre>
+
+    <p><a href="/">Back to home</a></p>
+  </div>
+</body>
+</html>
