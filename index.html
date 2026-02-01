@@ -4,84 +4,242 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Omens — Entertainment Only</title>
+  <meta name="description" content="AI Omens delivers cinematic, entertainment-only readings in under 60 seconds." />
   <style>
-    :root{--bg:#0b1220;--panel:#121a2a;--text:#e5e7eb;--muted:#9aa4b2;--accent:#7c5cff;--border:#1f2a3d;}
-    *{box-sizing:border-box;} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;background:linear-gradient(180deg,#0b1220,#0c1222);color:var(--text);} 
-    header{padding:28px 24px;border-bottom:1px solid var(--border);background:rgba(14,20,34,.9);}
-    .container{max-width:980px;margin:0 auto;padding:24px;}
-    h1{font-size:40px;margin:0 0 12px;} h2{margin-top:32px;} p{color:var(--muted);} 
-    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:600;}
-    .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px;margin-top:12px;}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-    .pill{background:#1a2336;border:1px solid var(--border);padding:4px 8px;border-radius:999px;font-size:12px;display:inline-block;margin-right:6px;}
-    footer{padding:24px;color:var(--muted);border-top:1px solid var(--border);} 
-    @media (max-width:900px){.grid{grid-template-columns:1fr;} h1{font-size:32px;}}
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+    :root{
+      --bg:#07080d;
+      --panel:rgba(16,18,28,0.72);
+      --panel-2:rgba(23,26,40,0.85);
+      --text:#eef2ff;
+      --muted:#a7b0c3;
+      --line:rgba(255,255,255,0.08);
+      --accent:#8b5cff;
+      --accent-2:#22d3ee;
+      --glow:rgba(139,92,255,0.55);
+      --glow-2:rgba(34,211,238,0.55);
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:"Space Grotesk",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(139,92,255,0.25), transparent 60%),
+        radial-gradient(800px 500px at 90% 10%, rgba(34,211,238,0.25), transparent 55%),
+        radial-gradient(700px 500px at 50% 120%, rgba(139,92,255,0.2), transparent 60%),
+        #07080d;
+      overflow-x:hidden;
+    }
+
+    .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+    header{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter: blur(12px);
+      background:rgba(7,8,13,0.6);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      height:72px;
+    }
+    .logo{font-weight:700;letter-spacing:0.3px;}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(139,92,255,0.12);
+      border:1px solid rgba(139,92,255,0.35);
+      color:#e9dcff;
+      padding:6px 10px;border-radius:999px;font-size:12px;
+    }
+    .cta{
+      display:inline-flex;align-items:center;gap:10px;
+      background:linear-gradient(135deg,var(--accent),#5d7cff);
+      color:white;text-decoration:none;font-weight:600;
+      padding:12px 18px;border-radius:12px;
+      box-shadow:0 10px 30px rgba(139,92,255,0.35);
+    }
+    .cta.secondary{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--text);} 
+
+    .hero{
+      padding:86px 0 60px;position:relative;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:28px;align-items:center;}
+    .hero h1{font-size:56px;line-height:1.02;margin:16px 0 16px;}
+    .hero p{color:var(--muted);font-size:18px;max-width:560px;}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;}
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,0.35);
+    }
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    .stat{display:flex;align-items:center;gap:12px;margin:12px 0;color:var(--muted);} 
+    .orb{
+      width:12px;height:12px;border-radius:50%;
+      background:radial-gradient(circle, var(--accent), transparent 70%);
+      box-shadow:0 0 16px var(--glow);
+    }
+
+    .section{padding:48px 0;}
+    .section h2{font-size:32px;margin:0 0 12px;}
+    .section p{color:var(--muted);} 
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+
+    .pricing{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+    }
+    .price{
+      padding:22px;border-radius:18px;border:1px solid var(--line);
+      background:var(--panel-2);position:relative;overflow:hidden;
+    }
+    .price.highlight{border-color:rgba(139,92,255,0.6);box-shadow:0 0 40px rgba(139,92,255,0.25);} 
+    .price h3{margin:0 0 6px;}
+    .price .amount{font-size:30px;font-weight:700;}
+
+    .divider{height:1px;background:var(--line);margin:28px 0;} 
+
+    footer{padding:36px 0 60px;color:var(--muted);border-top:1px solid var(--line);} 
+
+    .floating{
+      position:absolute;right:-50px;top:40px;width:340px;height:340px;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, var(--accent-2), transparent 60%),
+                 radial-gradient(circle at 70% 70%, var(--accent), transparent 55%);
+      filter:blur(24px);opacity:0.5;z-index:0;
+    }
+
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr;}
+      .hero h1{font-size:44px;}
+      .grid-3,.grid-2,.pricing{grid-template-columns:1fr;}
+      .floating{display:none;}
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <div class="pill">Entertainment Only</div>
-      <h1>AI Omens in 60 Seconds</h1>
-      <p>Playful, entertainment‑only readings for curious bots & builders — not advice.</p>
-      <a class="cta" href="#pricing">Get a 60‑second omen</a>
+    <div class="container nav">
+      <div class="logo">AI Omens</div>
+      <div class="badge">Entertainment only</div>
     </div>
   </header>
 
-  <main class="container">
-    <section>
-      <h2>How it works</h2>
-      <div class="card">
-        <ol>
-          <li>Pick a reading (Daily / Career / Love / AI Omen)</li>
-          <li>Answer 3 quick prompts</li>
-          <li>Get your reading + a follow‑up</li>
-        </ol>
-        <p><em>Categories are for fun and reflection only.</em></p>
+  <main>
+    <section class="hero">
+      <div class="floating" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Cinematic, 60‑second readings</div>
+          <h1>Beautifully cryptic. Thoughtfully playful.</h1>
+          <p>AI Omens delivers elegant, entertainment‑only readings designed to spark reflection and curiosity. No promises, no predictions — just a beautifully crafted experience.</p>
+          <div class="hero-actions">
+            <a class="cta" href="#pricing">Get a 60‑second omen</a>
+            <a class="cta secondary" href="#how">See how it works</a>
+          </div>
+        </div>
+        <div class="card glass">
+          <div class="stat"><span class="orb"></span><strong>3 questions</strong> to shape your omen</div>
+          <div class="stat"><span class="orb"></span><strong>60 seconds</strong> average runtime</div>
+          <div class="stat"><span class="orb"></span><strong>Private by design</strong> (no selling data)</div>
+          <div class="divider"></div>
+          <p style="margin:0;color:var(--muted)">“The moment you stop forcing clarity, the signal finds you.”</p>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Examples (fictional)</h2>
-      <div class="grid">
-        <div class="card">“A closed door is not a rejection; it’s a redirection.”</div>
-        <div class="card">“Notice what repeats itself today—there’s your clue.”</div>
-        <div class="card">“A quiet hour will reveal the next move.”</div>
+    <section id="how" class="section">
+      <div class="container">
+        <h2>How it works</h2>
+        <p>Choose a lane, answer a few prompts, receive a tailored omen crafted for entertainment and self‑reflection.</p>
+        <div class="grid-3" style="margin-top:16px;">
+          <div class="card">
+            <h3>1. Pick a reading</h3>
+            <p>Daily · Career · Love · AI Signal</p>
+          </div>
+          <div class="card">
+            <h3>2. Answer 3 prompts</h3>
+            <p>Short, poetic inputs shape your unique reading.</p>
+          </div>
+          <div class="card">
+            <h3>3. Receive your omen</h3>
+            <p>Cinematic language with a gentle follow‑up insight.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="pricing">
-      <h2>Pricing</h2>
-      <div class="grid">
-        <div class="card"><strong>$3</strong> Single reading</div>
-        <div class="card"><strong>$9</strong> 3‑pack</div>
-        <div class="card"><strong>$19/mo</strong> Weekly forecast + 2 deep dives</div>
+    <section class="section">
+      <div class="container">
+        <h2>Example lines (fictional)</h2>
+        <div class="grid-3" style="margin-top:16px;">
+          <div class="card">“A closed door is not rejection — it’s redirection.”</div>
+          <div class="card">“Watch what repeats. That’s your clue.”</div>
+          <div class="card">“The quiet hour reveals the next move.”</div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Trust & Safety</h2>
-      <div class="card">
-        <ul>
-          <li><strong>Entertainment only.</strong> No real‑world predictions or guarantees.</li>
-          <li><strong>Not a substitute</strong> for professional, medical, or financial advice.</li>
-          <li>Your data stays private.</li>
-        </ul>
+    <section id="pricing" class="section">
+      <div class="container">
+        <h2>Pricing</h2>
+        <p>Simple, transparent, and made for quick moments of wonder.</p>
+        <div class="pricing" style="margin-top:16px;">
+          <div class="price">
+            <h3>Single</h3>
+            <div class="amount">$3</div>
+            <p>One reading, one follow‑up.</p>
+          </div>
+          <div class="price highlight">
+            <h3>3‑Pack</h3>
+            <div class="amount">$9</div>
+            <p>Save for the week.</p>
+          </div>
+          <div class="price">
+            <h3>Studio</h3>
+            <div class="amount">$19/mo</div>
+            <p>Weekly forecast + 2 deep dives.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>FAQ</h2>
-      <div class="card">
-        <p><strong>Is this real?</strong> No — it’s entertainment, designed to be fun and reflective.</p>
-        <p><strong>How long does it take?</strong> About 60 seconds per reading.</p>
-        <p><strong>Refunds?</strong> If you’re unhappy, we’ll make it right—just ask.</p>
+    <section class="section">
+      <div class="container">
+        <h2>Trust & Safety</h2>
+        <div class="grid-2" style="margin-top:16px;">
+          <div class="card">
+            <h3>Entertainment only</h3>
+            <p>No real‑world predictions or guarantees. This is a playful, reflective experience.</p>
+          </div>
+          <div class="card">
+            <h3>Not advice</h3>
+            <p>Not a substitute for medical, legal, or financial guidance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>FAQ</h2>
+        <div class="card">
+          <p><strong>Is this real?</strong> No — it’s entertainment, designed to be fun and reflective.</p>
+          <p><strong>How long does it take?</strong> About 60 seconds per reading.</p>
+          <p><strong>Refunds?</strong> If you’re unhappy, we’ll make it right — just ask.</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="container">
-    © AI Omens — entertainment only.
+  <footer>
+    <div class="container">© AI Omens — entertainment only.</div>
   </footer>
 </body>
 </html>
