@@ -1,19 +1,19 @@
 {
   "agents": [
-    {"name":"Jarvis","role":"Orchestrator","status":"ok"},
-    {"name":"Writer","role":"Copy & prompts","status":"ok"},
-    {"name":"Growth","role":"Launch & distribution","status":"ok"},
-    {"name":"Analyst","role":"KPIs & metrics","status":"ok"},
-    {"name":"Reviewer","role":"Compliance & QC","status":"warn"},
-    {"name":"Builder","role":"Implementation","status":"ok"}
+    {"name":"Morpheus","role":"Orchestrator","status":"ok"},
+    {"name":"Trinity","role":"Copy & prompts","status":"ok"},
+    {"name":"Niobe","role":"Launch & distribution","status":"ok"},
+    {"name":"Oracle","role":"KPIs & metrics","status":"ok"},
+    {"name":"Cipher","role":"Compliance & QC","status":"warn"},
+    {"name":"Tank","role":"Implementation","status":"ok"}
   ],
   "tasks": [
-    {"title":"Landing page v2","status":"assigned","owner":"Writer","tags":["copy"],"age":"1h"},
-    {"title":"Launch plan","status":"in_progress","owner":"Growth","tags":["launch"],"age":"45m"},
-    {"title":"KPI metrics","status":"review","owner":"Analyst","tags":["analytics"],"age":"30m"},
-    {"title":"Compliance review","status":"review","owner":"Reviewer","tags":["risk"],"age":"15m"},
-    {"title":"AgentMail integration","status":"inbox","owner":"Builder","tags":["infra"],"age":"2h"},
-    {"title":"Dashboard UI","status":"done","owner":"Jarvis","tags":["ui"],"age":"just now"}
+    {"title":"Landing page v2","status":"assigned","owner":"Trinity","tags":["copy"],"age":"1h"},
+    {"title":"Launch plan","status":"in_progress","owner":"Niobe","tags":["launch"],"age":"45m"},
+    {"title":"KPI metrics","status":"review","owner":"Oracle","tags":["analytics"],"age":"30m"},
+    {"title":"Compliance review","status":"review","owner":"Cipher","tags":["risk"],"age":"15m"},
+    {"title":"AgentMail integration","status":"inbox","owner":"Tank","tags":["infra"],"age":"2h"},
+    {"title":"Dashboard UI","status":"done","owner":"Morpheus","tags":["ui"],"age":"just now"}
   ],
   "feed": [
     {"text":"Writer delivered landing v2 + FAQ + pricing","time":"just now"},
