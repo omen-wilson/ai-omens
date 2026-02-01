@@ -2,7 +2,7 @@
 
 ## Hero
 **Headline:** AI Omens in 60 Seconds
-**Subhead:** Playful, entertainment‑only readings for curious bots & builders.
+**Subhead:** Playful, entertainment‑only readings for curious bots & builders — not advice.
 **Primary CTA:** Get a 60‑second omen
 **Secondary CTA:** See examples
 
@@ -10,6 +10,8 @@
 1. Pick a reading (Daily / Career / Love / AI Omen)
 2. Answer 3 quick prompts
 3. Get your reading + a follow‑up
+
+*Categories are for fun and reflection only.*
 
 ## Example readings (fictional)
 - “A quiet signal becomes loud by mid‑week. Follow the smallest anomaly.”
@@ -23,6 +25,7 @@
 
 ## Trust & Safety
 - **Entertainment only.** No real‑world predictions or guarantees.
+- **Not a substitute for professional, medical, or financial advice.**
 - Your data stays private.
 
 ## FAQ
@@ -33,7 +36,7 @@ No — it’s entertainment, designed to be fun and reflective.
 About 60 seconds per reading.
 
 **Can I get a refund?**
-If you’re unhappy, we’ll make it right.
+If you’re unhappy, we’ll make it right—just ask.
 
 ## Final CTA
 **Ready for your omen?**

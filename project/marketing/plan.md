@@ -4,7 +4,7 @@
 "AI Omens for the terminally curious." Entertainment‑only.
 
 ## Core Messages
-- Fast, fun, oddly accurate‑feeling reads
+- Fast, fun, and reflective — entertainment only
 - Daily omens in 60 seconds
 - Entertainment only — no real predictions
 

@@ -9,11 +9,11 @@
 ## Step 2: Quick intake
 - Name or handle
 - Current vibe (3 choices)
-- One question
+- One question (for fun/reflective only)
 
 ## Step 3: Payment
 - Crypto checkout (USDC/ETH/SOL)
-- Clear “Entertainment only” disclosure
+- Clear “Entertainment only — not advice” disclosure
 
 ## Step 4: Delivery
 - Show reading on screen

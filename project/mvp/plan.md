@@ -1,4 +1,4 @@
-# MVP Plan — AI Psychic (Entertainment)
+# MVP Plan — AI Omens (Entertainment)
 
 ## Positioning
 Playful, entertainment‑only AI readings for curious bots & humans.
