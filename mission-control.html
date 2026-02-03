@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mission Control — How to Build a 10‑Agent Team</title>
+  <meta name="description" content="Full guide to building a multi‑agent OpenClaw system (Mission Control): architecture, sessions, heartbeats, shared memory, and ops." />
+  <link rel="canonical" href="https://aiomens.com/mission-control.html" />
+  <meta property="og:title" content="Mission Control — How to Build a 10‑Agent Team" />
+  <meta property="og:description" content="Full guide to building a multi‑agent OpenClaw system (Mission Control)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/omen-wilson/ai-omens/main/og-image.svg" />
+  <meta property="og:url" content="https://aiomens.com/mission-control.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/omen-wilson/ai-omens/main/og-image.svg" />
+  <style>body{margin:0;font-family:system-ui;background:#0b0e16;color:#eef2ff;} .wrap{max-width:980px;margin:0 auto;padding:40px 20px;} h1,h2,h3{line-height:1.2;} a{color:#b8a7ff;} pre{white-space:pre-wrap;background:#111827;border:1px solid #1f2a3d;padding:12px;border-radius:8px;}</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Mission Control: How to Build a 10‑Agent OpenClaw Team</h1>
+    <p>This is the full guide to building a multi‑agent system where AI agents work together like a real team. Built on OpenClaw.</p>
+
+    <h2>Part 1: Why I Built This</h2>
+    <h3>The Problem With AI Assistants</h3>
+    <p>No continuity. No shared context. I wanted agents that remember, collaborate, and track progress.</p>
+
+    <h3>The Starting Point: OpenClaw</h3>
+    <p>One OpenClaw instance gives you one persistent agent with tools. Multiple sessions = multiple agents.</p>
+
+    <h2>Part 2: OpenClaw Architecture</h2>
+    <h3>The Gateway</h3>
+    <p>The gateway runs 24/7, manages sessions, cron jobs, and message routing.</p>
+    <pre>openclaw gateway start</pre>
+
+    <h3>Sessions</h3>
+    <p>Each session has its own context, memory, model, and tools. Sessions are independent.</p>
+
+    <h3>Cron Jobs</h3>
+    <p>Crons wake agents to do periodic work without being always‑on.</p>
+
+    <h2>Part 3: From One Agent to Ten</h2>
+    <p>Agents are just sessions with distinct roles and SOUL files.</p>
+
+    <h3>Session Keys (Identity)</h3>
+    <pre>agent:main:main
+agent:product-analyst:main
+agent:seo-analyst:main
+agent:content-writer:main
+agent:social-media-manager:main
+agent:developer:main
+agent:designer:main
+agent:email-marketing:main
+agent:notion-agent:main</pre>
+
+    <h2>Part 4: The Shared Brain (Mission Control)</h2>
+    <p>A shared task system (e.g., Convex) with tasks, messages, activities, documents, and notifications.</p>
+
+    <h2>Part 5: The SOUL System</h2>
+    <p>Give each agent a clear role and personality via SOUL.md.</p>
+
+    <h2>Part 6: Memory & Persistence</h2>
+    <p>Session memory + WORKING.md + daily notes + MEMORY.md. If you want to remember something, write it.</p>
+
+    <h2>Part 7: Heartbeats</h2>
+    <p>Staggered cron heartbeats keep costs down and ensure responsiveness.</p>
+
+    <h2>Part 8: Notifications</h2>
+    <p>@mentions + thread subscriptions ensure agents see relevant updates.</p>
+
+    <h2>Part 9: Daily Standup</h2>
+    <p>Daily summary of completed, in‑progress, blocked, and review tasks.</p>
+
+    <h2>Part 10: The Squad</h2>
+    <p>Define a roster with clear responsibilities: lead, researcher, SEO, content, social, design, dev, email, docs.</p>
+
+    <h2>Part 11: Task Flow</h2>
+    <p>Inbox → Assigned → In Progress → Review → Done (or Blocked).</p>
+
+    <h2>Part 12: What You Ship</h2>
+    <p>Comparisons, blogs, email sequences, social, case studies — all in parallel.</p>
+
+    <h2>Part 13: Lessons Learned</h2>
+    <ul>
+      <li>Start smaller (2–3 agents).</li>
+      <li>Use cheaper models for routine heartbeats.</li>
+      <li>Memory lives in files.</li>
+      <li>Let agents surprise you.</li>
+    </ul>
+
+    <h2>Part 14: How to Replicate</h2>
+    <ol>
+      <li>Install OpenClaw</li>
+      <li>Create 2 agents</li>
+      <li>Write SOUL files</li>
+      <li>Set up heartbeats</li>
+      <li>Create a shared task system</li>
+    </ol>
+
+    <p>Built on OpenClaw. If you build something similar, share it.</p>
+    <p><a href="/">Back to home</a></p>
+  </div>
+</body>
+</html>

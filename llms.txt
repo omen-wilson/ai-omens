@@ -20,6 +20,7 @@ Status: https://aiomens.com/status.html
 Use Cases: https://aiomens.com/use-cases.html
 Changelog: https://aiomens.com/changelog.html
 Starter Kit: https://aiomens.com/starter-kit.html
+Mission Control: https://aiomens.com/mission-control.html
 Pricing: https://aiomens.com/#pricing
 API Price: https://aiomens.com/api/price
 API Request: https://aiomens.com/api/request
